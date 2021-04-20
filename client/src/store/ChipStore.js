@@ -15,12 +15,12 @@ export default class ChipStore {
             {id:4,name:'2v_6'},
         ]
         this._chips =[
-            {id:1,series:'50292',coming:20000,consum:18000,img:'C:/Users/user/learnall/readyChip/server/static/6c6cc7b8-d5f6-47a1-8b60-fd51247e5e7b.jpg'},
-            {id:2,series:'51347',coming:20000,consum:18000,img:'C:/Users/user/learnall/readyChip/server/static/6c6cc7b8-d5f6-47a1-8b60-fd51247e5e7b.jpg'},
-            {id:3,series:'51896',coming:20000,consum:18000,img:'C:/Users/user/learnall/readyChip/server/static/6c6cc7b8-d5f6-47a1-8b60-fd51247e5e7b.jpg'},
-            {id:4,series:'52145',coming:20000,consum:18000,img:'C:/Users/user/learnall/readyChip/server/static/6c6cc7b8-d5f6-47a1-8b60-fd51247e5e7b.jpg'},
-            {id:5,series:'52437',coming:20000,consum:18000,img:'C:/Users/user/learnall/readyChip/server/static/6c6cc7b8-d5f6-47a1-8b60-fd51247e5e7b.jpg'},
-            {id:6,series:'57202',coming:20000,consum:18000,img:'C:/Users/user/learnall/readyChip/server/static/6c6cc7b8-d5f6-47a1-8b60-fd51247e5e7b.jpg'},
+            {id:1,series:'50292',coming:20000,consum:18000,img:'https://krasn.diamarka.com/upload/iblock/106/10695dbf27334116c90636b66796be8b.jpg'},
+            {id:2,series:'51347',coming:20000,consum:18000,img:'https://krasn.diamarka.com/upload/iblock/106/10695dbf27334116c90636b66796be8b.jpg'},
+            {id:3,series:'51896',coming:20000,consum:18000,img:'https://krasn.diamarka.com/upload/iblock/106/10695dbf27334116c90636b66796be8b.jpg'},
+            {id:4,series:'52145',coming:20000,consum:18000,img:'https://krasn.diamarka.com/upload/iblock/106/10695dbf27334116c90636b66796be8b.jpg'},
+            {id:5,series:'52437',coming:20000,consum:18000,img:'https://krasn.diamarka.com/upload/iblock/106/10695dbf27334116c90636b66796be8b.jpg'},
+            {id:6,series:'57202',coming:20000,consum:18000,img:'https://krasn.diamarka.com/upload/iblock/106/10695dbf27334116c90636b66796be8b.jpg'},
         ]
         this._selectedType={}
         this._selectedVersion={}
