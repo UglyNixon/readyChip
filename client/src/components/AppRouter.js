@@ -6,8 +6,6 @@ import { DATA_ROUTE } from '../utils/consts';
 
 const AppRouter = () => {
     const {user} = useContext(Context)
-   
-    
     return (
       <Switch> 
           {
