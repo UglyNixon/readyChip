@@ -1,18 +1,23 @@
-import React from 'react';
+import React, { createContext } from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-
+import ChipStore from './store/ChipStore';
+import UserStore from './store/UserStore';
+export const Context = createContext(null)
 
 
 
 ReactDOM.render(
-  <React.StrictMode>
+  <Context.Provider value={{
+    user :new UserStore(),
+    chip: new ChipStore()
+    }}>
     <App />
-  </React.StrictMode>,
+    </Context.Provider>,
+
   document.getElementById('root')
 );
 
 
 
 
-reportWebVitals();
