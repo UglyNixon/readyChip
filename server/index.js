@@ -2,7 +2,7 @@ require('dotenv').config()
 const sequelize = require('./db');
 const models = require('./models/models');
 const express = require('express');
-const PORT = process.env.PORT || 5000;
+
 const cors = require('cors');
 const router = require('./routes/index');
 const errorHandler = require('./middleware/errorHandlingMiddleware');
@@ -10,7 +10,7 @@ const fileUpload = require('express-fileupload');
 const path = require('path');
 
 const app=express();
-
+const PORT = process.env.PORT || 5000;
 
 app.use(express.static(path.resolve(__dirname,'static')))
 app.use(cors())

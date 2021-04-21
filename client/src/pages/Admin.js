@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Button, Container } from 'react-bootstrap';
+import CreateChip from '../components/modalPage/CreateChip';
 import CreateType from '../components/modalPage/CreateType';
 import CreateVersion from '../components/modalPage/CreateVersion';
 
@@ -14,6 +15,7 @@ const Admin = () => {
             <Button variant='outline-dark' className='mt-2 p-3' onClick={()=>setTypeVisible(true)}>Добавить тип платы</Button>
             <CreateType  show={typeVisible} onHide={()=>setTypeVisible(false)}/>
             <CreateVersion show={versionVisible} onHide={()=>setVersionVisible(false)}/>
+            <CreateChip show={chipVisible} onHide={()=>setChipVisible(false)}/>
         </Container>
     
     );
