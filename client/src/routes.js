@@ -9,9 +9,10 @@ import { ADMIN_ROUTE, ANALIT_ROUTE, CHIP_ROUTE, DATA_ROUTE, LOGIN_ROUTE, REGISTR
 export const authRoutes = [
 
     {
-        path : ADMIN_ROUTE,
-        Component : Admin
+        path:ADMIN_ROUTE,
+        Component:Admin
     }
+
 ]
 
 export const publicRoutes = [

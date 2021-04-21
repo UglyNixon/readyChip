@@ -6,7 +6,7 @@ import { DATA_ROUTE } from '../utils/consts';
 
 const AppRouter = () => {
     const {user} = useContext(Context)
-    console.log(user.isAuth)
+    
     return (
       <Switch> 
        {user.isAuth&&authRoutes.map(({path,Component})=>

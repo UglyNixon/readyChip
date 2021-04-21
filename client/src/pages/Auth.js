@@ -1,21 +1,23 @@
 import { observer } from 'mobx-react-lite';
 import React, { useContext, useState } from 'react';
 import { Button, Card, Container, Form, Row } from 'react-bootstrap';
-import { NavLink,useLocation } from 'react-router-dom';
+import { NavLink,useHistory,useLocation } from 'react-router-dom';
 import { Context } from '../index';
 import { registration, loginFunc } from '../http/userApi';
 
-import { LOGIN_ROUTE, REGISTRATION_ROUTE } from '../utils/consts';
+import { DATA_ROUTE, LOGIN_ROUTE, REGISTRATION_ROUTE } from '../utils/consts';
 
 const Auth = observer(() => {
     const {user}=useContext(Context)
     const location = useLocation()
     const isLogin =location.pathname===LOGIN_ROUTE
+    const history=useHistory()
     const [login,setLogin]= useState('')
     const [password,setPassword]=useState('')
     const authFunc =async ()=>{
         let data;
-        if (isLogin)
+        try {
+            if (isLogin)
         {
              data = await loginFunc(login,password)
         }else {
@@ -23,6 +25,12 @@ const Auth = observer(() => {
         }
         user.setUser(data)
         user.setIsAuth(true)
+        history.push(DATA_ROUTE)
+            
+        } catch (error) {
+            alert(error.response.data.message)
+        }
+        
         
     
     }
