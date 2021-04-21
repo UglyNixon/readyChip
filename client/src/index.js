@@ -4,7 +4,7 @@ import App from './App';
 import ChipStore from './store/ChipStore';
 import UserStore from './store/UserStore';
 export const Context = createContext(null)
-console.log(process.env.REACT_APP_API_URL)
+
 
 
 ReactDOM.render(

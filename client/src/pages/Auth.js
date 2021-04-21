@@ -1,12 +1,32 @@
-import React from 'react';
+import { observer } from 'mobx-react-lite';
+import React, { useContext, useState } from 'react';
 import { Button, Card, Container, Form, Row } from 'react-bootstrap';
 import { NavLink,useLocation } from 'react-router-dom';
+import { Context } from '../index';
+import { registration, loginFunc } from '../http/userApi';
+
 import { LOGIN_ROUTE, REGISTRATION_ROUTE } from '../utils/consts';
 
-const Auth = () => {
+const Auth = observer(() => {
+    const {user}=useContext(Context)
     const location = useLocation()
     const isLogin =location.pathname===LOGIN_ROUTE
+    const [login,setLogin]= useState('')
+    const [password,setPassword]=useState('')
+    const authFunc =async ()=>{
+        let data;
+        if (isLogin)
+        {
+             data = await loginFunc(login,password)
+        }else {
+             data = await registration(login,password)
+        }
+        user.setUser(data)
+        user.setIsAuth(true)
+        
     
+    }
+
     return (
       <Container
       className='d-flex justify-content-center align-items-center'
@@ -20,11 +40,17 @@ const Auth = () => {
        <Form className='d-flex flex-column'>
                 <Form.Control 
                 placeholder = {isLogin ? 'Введите логин...':'Придумайте логин...'}
+                onChange={e=>setLogin(e.target.value)}
                 className='mt-3'
+                value={login}
+              
                 />
                 <Form.Control 
                 placeholder={isLogin ? 'Введите пароль...':'Придумайте пароль...'}
                 className='mt-3'
+                value={password}
+                onChange={e=>setPassword(e.target.value)}
+                type='password'
                 />
                 
             </Form>
@@ -41,6 +67,7 @@ const Auth = () => {
                <Button
                variant ='outline-success'
                className='align-self-end'
+               onClick={authFunc}
                >
                    {isLogin ? 'Войти':'Зарегестрироваться'}
                </Button>
@@ -52,6 +79,6 @@ const Auth = () => {
 
       </Container>
     );
-};
+})
 
 export default Auth;
