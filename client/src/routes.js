@@ -12,13 +12,7 @@ export const authRoutes = [
         path : ADMIN_ROUTE,
         Component : Admin
     }
-
-
 ]
-
-
-
-
 
 export const publicRoutes = [
 
