@@ -5,13 +5,14 @@ import { Context } from '..';
 import ChipBar from '../components/ChipBar';
 import ChipList from '../components/ChipList';
 import TypeBar from '../components/TypeBar';
-import { fetchTypes,fetchVersions } from '../http/chipApi';
+import { fetchAllChip, fetchTypes,fetchVersions } from '../http/chipApi';
 
 const Data = observer(() => {
     const {chip}=useContext(Context)
     useEffect(()=>{
 fetchTypes().then(data=>chip.setTypes(data))
 fetchVersions().then(data=>chip.setVersions(data))
+fetchAllChip().then(data=>chip.setChip(data.rows))
     })
 
     return (

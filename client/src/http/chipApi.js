@@ -24,3 +24,16 @@ export const fetchVersions =async () =>{
 
      return data
 }
+export const createChip =async (type) =>{
+    const {data} = await $authHost.post('api/chip',type)
+ 
+    return data
+}
+export const fetchAllChip =async () =>{
+    const {data} = await $host.get('api/chip')
+     return data
+}
+export const fetchOneChip =async (id) =>{
+    const {data} = await $host.get('api/chip/'+id)
+     return data
+}

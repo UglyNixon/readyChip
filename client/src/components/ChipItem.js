@@ -12,22 +12,21 @@ const ChipItem = ({chip}) => {
             style={{width:150,cursor:'pointer'}}
             border={'black'}
             className='mt-3 p-3'
-            onClick={()=>history.push(CHIP_ROUTE+'/' + chip.id)}
+            onClick={()=>history.push(CHIP_ROUTE+'/' + chip.id)} 
             >
-            <Image style={{width:100,height:150}} src={chip.img} className='align-self-center'/>
+           {/*    src={chip.img} procces.env.REACT_APP_API_URL + chip.img  */}
+            <Image style={{width:100,height:150}} src={chip.img} className='align-self-center'/> 
             <div>
-
                 <div>Серия:{chip.series}</div>
                 <div>Тип:</div>
                 <div>Версия:</div>
                 <div>Приход:</div>
                 <div>Расход:</div>
                 <div className='d-flex'>
-                    <div>Брак:</div>
-                    <div>% </div>
+                <div>Брак:</div>
+                <div>% </div>
                 </div>
             </div>
-
             </Card>
        </Col>
     );
