@@ -1,12 +1,13 @@
 import { observer } from 'mobx-react-lite';
 import React, { useContext } from 'react';
 import { Row } from 'react-bootstrap';
+import { fetchAllChip } from '../http/chipApi';
 import { Context } from '../index';
 import ChipItem from './ChipItem';
 
 const ChipList = observer(() => {
     const {chip}=useContext(Context);
-
+    fetchAllChip().then(data=>chip.setChips(data.rows))
     return (
         <Row
         className='d-flex'
