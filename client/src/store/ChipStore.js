@@ -5,8 +5,7 @@ export default class ChipStore {
     constructor(){
 
         this._types=[
-                {id:1,name:'Экспресс'},
-                {id:2,name:'Плюс'}
+              
         ]
         this._versions = [
             {id:1,name:'124'},

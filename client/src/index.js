@@ -9,13 +9,18 @@ export const Context = createContext(null)
 
 ReactDOM.render(
   <Context.Provider value={{
-    user :new UserStore(),
-    chip: new ChipStore()
-    }}>
-    <App />
-    </Context.Provider>,
-
-  document.getElementById('root')
+    user:new UserStore(),
+    chip:new ChipStore(),
+  }}>
+ 
+ <App/>
+ 
+  </Context.Provider>,
+ 
+     
+   
+   
+   document.getElementById('root')
 );
 
 
