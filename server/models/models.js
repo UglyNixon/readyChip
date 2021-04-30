@@ -7,9 +7,7 @@ login:{type:DataTypes.STRING,unique:true},
 password:{type:DataTypes.STRING},
 role:{type:DataTypes.STRING,defaultValue:'USER'}
 })
-const Data = sequelize.define ('data',{
-    id:{type:DataTypes.INTEGER,primaryKey:true,autoIncrement:true},
-    })
+
 
 const Chip = sequelize.define ('chip',{
    id:{type:DataTypes.INTEGER,primaryKey:true,autoIncrement:true},
@@ -31,17 +29,16 @@ const Chip = sequelize.define ('chip',{
             })
             const Defec= sequelize.define ('defec',{
                 id:{type:DataTypes.INTEGER,primaryKey:true,autoIncrement:true},
-                code:{type:DataTypes.INTEGER,unique:true},
+                code:{type:DataTypes.INTEGER},
                 value:{type:DataTypes.INTEGER},
                 realValue:{type:DataTypes.INTEGER}
                 })
 
 
-User.hasOne(Data)
-Data.belongsTo(User)
 
-Data.hasMany(Chip)
-Chip.belongsTo(Data)
+
+// User.hasMany(Chip)
+// Chip.belongsTo(User)
 
 Type.hasMany(Chip)
 Chip.belongsTo(Type)
@@ -59,5 +56,5 @@ Defec.belongsTo(Chip)
 
 module.exports ={
     User,
-    Type,Version,Chip,Defec,Data
+    Type,Version,Chip,Defec
 };

@@ -12,9 +12,16 @@ class TypeController {
         return res.json(type)
     }
     async getAll(req,res){
+        let {id} =req.body
+        console.log(req.body)
+        if (id) {
+            const types = await Type.findAll({where:{id:id}})
+            return res.json(types) 
+        }
+        if(!id){
         const types = await Type.findAll();
         return res.json(types)
-
+        }   
     }
 }
 

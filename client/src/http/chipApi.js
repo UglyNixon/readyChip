@@ -8,9 +8,8 @@ export const createType =async (type) =>{
  
     return data
 }
-export const fetchTypes =async () =>{
-    const {data} = await $host.get('api/type')
- 
+export const fetchTypes =async (id) =>{
+    const {data} = await $host.get('api/type',id)
      return data
 }
 

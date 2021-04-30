@@ -26,8 +26,8 @@ export default class ChipStore {
     setChips(chips) {
         this._chips=chips
     }
-    setSelectedType(ver){
-        this._selectedType=ver
+    setSelectedType(type){
+        this._selectedType=type
 
     }
     setSelectedVersion(type){

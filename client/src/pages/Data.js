@@ -12,7 +12,9 @@ const Data = observer(() => {
     useEffect(()=>{
 fetchTypes().then(data=>chip.setTypes(data))
 fetchVersions().then(data=>chip.setVersions(data))
-fetchAllChip().then(data=>chip.setChip(data.rows))
+fetchAllChip().then(data=>
+    chip.setChips(data.rows)
+ )
     })
 
     return (

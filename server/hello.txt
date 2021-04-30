@@ -1,0 +1,1 @@
+[{"code":"1","value":"77","realValue":"77","number":1619780323177},{"code":"2","value":"37","realValue":"37","number":1619780324074},{"code":"3","value":"0","realValue":"0","number":1619780324794},{"code":"4","value":"16","realValue":"16","number":1619780325186},{"code":"5","value":"20","realValue":"20","number":1619780325538}]

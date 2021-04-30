@@ -7,7 +7,6 @@ import ChipItem from './ChipItem';
 
 const ChipList = observer(() => {
     const {chip}=useContext(Context);
-    fetchAllChip().then(data=>chip.setChips(data.rows))
     return (
         <Row
         className='d-flex'

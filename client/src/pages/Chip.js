@@ -1,20 +1,25 @@
-import React from 'react';
+import { observer } from 'mobx-react-lite';
+import React, { useEffect, useState } from 'react';
 import { Col, Container, Image, Row, Table } from 'react-bootstrap';
 
+import {useParams} from 'react-router-dom';
+import { fetchOneChip, fetchTypes } from '../http/chipApi';
+
 const Chip = () => {
-    const chip = {id:1,series:'50292',coming:20000,consum:18000,img:'https://krasn.diamarka.com/upload/iblock/106/10695dbf27334116c90636b66796be8b.jpg'}
-    const defec=[
-        {id:1,code:1,value:10,realValue:11},
-        {id:2,code:2,value:20,realValue:21},
-        {id:3,code:3,value:30,realValue:31},
-        {id:4,code:4,value:40,realValue:41},
-        {id:5,code:5,value:50,realValue:51},
-    ]
+   const [chip,setChip] = useState({defect:[]});
+   const [type,setType] = useState('')
+   const [version,setVersion] = useState('')
+   const {id} = useParams();
+   useEffect(()=>{
+    fetchOneChip(id).then(data=>setChip(data)).then(()=>fetchTypes({id}).then(data=>setType(data)).then(()=>console.log(type)))
+    
+   },[])
+   
     return (
       <Container className='mt-5 '>
         <Container className='d-flex'>
         <Col md={3}>
-          <Image src={chip.img} style={{width:150,height:150}}/>
+          <Image  style={{width:150,height:150}}/>
         </Col>
 
        <Col md={9}>
@@ -23,7 +28,7 @@ const Chip = () => {
   <thead>
   <tr >
         <th>Код ошибки</th>
-        {defec.map(info=>
+        {chip.defect.map(info=>
         <th key={info.id} className='justify-content-center' style ={{textAlign:'center'}}>{info.code}</th>)}
     </tr> 
    
@@ -32,14 +37,14 @@ const Chip = () => {
  
      <tr>
      <td>Кол-во по журналу</td>
-       {defec.map(info=>
+       {chip.defect.map(info=>
   
         <td key={info.id} className='justify-content-center 'style ={{textAlign:'center'}}>{info.value}</td>
         
         )}</tr>
         <tr>
           <td>Кол-во реальное</td>
-          {defec.map(info=> 
+          {chip.defect.map(info=> 
   
         <td key={info.id} className='justify-content-center 'style ={{textAlign:'center'}}>{info.realValue}</td>
 
