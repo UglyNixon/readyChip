@@ -11,7 +11,10 @@ const Chip = () => {
    const [version,setVersion] = useState('')
    const {id} = useParams();
    useEffect(()=>{
-    fetchOneChip(id).then(data=>setChip(data)).then(()=>fetchTypes({id}).then(data=>setType(data)).then(()=>console.log(type)))
+    fetchOneChip(id).then(data=>setChip(data))
+    .then(()=>fetchTypes(id))
+    // .then(data=>console.log(data))
+    .then(data=>setType(data[0]))
     
    },[])
    
@@ -19,7 +22,7 @@ const Chip = () => {
       <Container className='mt-5 '>
         <Container className='d-flex'>
         <Col md={3}>
-          <Image  style={{width:150,height:150}}/>
+          <Image src={process.env.REACT_APP_API_URL+type.img} style={{width:150}}/>
         </Col>
 
        <Col md={9}>
